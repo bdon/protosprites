@@ -1,0 +1,37 @@
+<html>
+<body>
+<svg id="police" width="32px" height="32px" viewBox="4 4 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" style="fill-rule:evenodd;clip-rule:evenodd;stroke-miterlimit:10;">
+    <g transform="matrix(1,0,0,1,-145.475,-4.47166)">
+        <g transform="matrix(1,0,0,1,164.5,9.4966)">
+            <path d="M0,18L-10,18C-12.209,18 -14,16.209 -14,14L-14,4C-14,1.791 -12.209,0 -10,0L0,0C2.209,0 4,1.791 4,4L4,14C4,16.209 2.209,18 0,18Z" style="fill:rgb(153,199,235);fill-rule:nonzero;stroke:rgb(92,71,59);stroke-width:1px;"/>
+        </g>
+        <g transform="matrix(1,0,0,1,159.555,13.8171)">
+            <path d="M0,10.658C1.76,10.219 3.766,8.921 4.417,7.154C4.799,6.12 4.438,5.232 4.025,4.272C3.568,3.212 3.507,2.57 4.194,1.633L2.69,0C1.379,0.849 -0.14,0.713 -0.14,0.713L0.029,0.713C0.029,0.713 -1.488,0.849 -2.801,0L-4.304,1.633C-3.67,2.498 -3.641,3.119 -4.069,4.122C-4.499,5.129 -4.931,6.06 -4.527,7.154C-3.876,8.921 -1.87,10.219 -0.11,10.658L0,10.658Z" style="fill:rgb(211,219,221);fill-rule:nonzero;stroke:rgb(92,71,59);stroke-width:1px;stroke-linecap:round;stroke-linejoin:round;"/>
+        </g>
+        <g transform="matrix(1,0,0,1,159.589,21.5364)">
+            <path d="M0,-4.906L-0.616,-3.094L-2.491,-3.031L-1.022,-1.875L-1.554,-0.062L0,-1.083L1.634,0L1.071,-1.843L2.446,-3.062L0.665,-3.062L0,-4.906Z" style="fill:rgb(255,234,85);fill-rule:nonzero;stroke:rgb(92,71,59);stroke-width:1px;stroke-linecap:round;stroke-linejoin:round;"/>
+        </g>
+    </g>
+</svg>
+<svg id="pharmacy" width="32px" height="32px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;">
+    <g transform="matrix(1,0,0,1,-271.475,-175.472)">
+        <g transform="matrix(1,0,0,1,286.5,176.497)">
+            <path d="M0,18L-10,18C-12.209,18 -14,16.209 -14,14L-14,4C-14,1.791 -12.209,0 -10,0L0,0C2.209,0 4,1.791 4,4L4,14C4,16.209 2.209,18 0,18Z" style="fill:rgb(233,244,190);fill-rule:nonzero;stroke:rgb(92,71,59);stroke-width:1px;"/>
+        </g>
+        <g transform="matrix(1,0,0,1,279.5,183.496)">
+            <path d="M0,4.001L-3,4.001L-3,0.001L0,0.001L0,-2.999L4,-2.999L4,0.001L7,0.001L7,4.001L4,4.001L4,7L0,7L0,4.001Z" style="fill:rgb(97,209,97);fill-rule:nonzero;stroke:rgb(55,107,24);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;"/>
+        </g>
+    </g>
+</svg>
+<svg id="hospital" width="32px" height="32px" viewBox="4 4 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="fill-rule:evenodd;clip-rule:evenodd;stroke-miterlimit:10;">
+    <g transform="matrix(1,0,0,1,-143.475,-174.472)">
+        <g transform="matrix(1,0,0,1,160.5,179.497)">
+            <path d="M0,16L-8,16C-10.209,16 -12,14.209 -12,12L-12,4C-12,1.791 -10.209,0 -8,0L0,0C2.209,0 4,1.791 4,4L4,12C4,14.209 2.209,16 0,16Z" style="fill:rgb(239,216,217);fill-rule:nonzero;stroke:rgb(216,30,58);stroke-width:1px;"/>
+        </g>
+        <g transform="matrix(1,0,0,1,154.5,185.497)">
+            <path d="M0,4L-3,4L-3,0L0,0L0,-3L4,-3L4,0L7,0L7,4L4,4L4,7L0,7L0,4Z" style="fill:rgb(234,101,107);fill-rule:nonzero;stroke:white;stroke-width:1px;"/>
+        </g>
+    </g>
+</svg>
+</body>
+</html>
