@@ -16,7 +16,7 @@ Example of a valid protosprites sheet:
 ```html
 <html>
   <body>
-    <svg id="foobar" width="20px" height="20px"version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <svg id="foobar" width="20px" height="20px" version="1.1" xmlns="http://www.w3.org/2000/svg">
       <circle cx="10" cy="10" r="8" fill="green"/>
     </svg>
   </body>
@@ -31,6 +31,6 @@ let sheet = new Protosprites('sheet.html')
 let canvas = document.getElementById("canvas")
 let ctx = canvas.getContext('2d')
 sheet.get('foobar').then(s => {
-    ctx.drawImage(s.canvas,s.x,s.y,s.w,s.h,0,0,i.w,i.h)
+    ctx.drawImage(s.canvas,s.x,s.y,s.w,s.h,0,0,s.w,s.h)
 })
 ```
