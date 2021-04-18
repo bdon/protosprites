@@ -15,17 +15,17 @@
     </body>
     <script type="module">
         import Protosprites from '../index.js'
-        let p = new Protosprites('bubble-wrap.psprites')
+        let p = new Protosprites('bubble-wrap.html')
         p.canvas.then(c => {
-            c.style.width = "256px"
-            c.style.height = "256px"
+            c.style.width = c.width / 2 + "px"
+            c.style.height = c.height / 2 + "px"
             document.body.appendChild(c)
         })
 
         let target = document.getElementById("target")
         let ctx = target.getContext('2d')
         p.get('hospital').then(i => {
-            ctx.drawImage(i.canvas,i.x,i.y,i.width,i.height,0,0,i.width,i.height)
+            ctx.drawImage(i.canvas,i.x,i.y,i.w,i.h,0,0,i.w,i.h)
         })
     </script>
 </html>
