@@ -1,7 +1,8 @@
-
 ## Overview
 
-Single-file sets of SVG icons for resolution-independent icons on web canvas
+[Demo](https://protomaps.github.io/protosprites/examples/display.html)
+
+Single-file sets of SVGs for resolution-independent icons on web canvas
 
 ## Serialization format
 
