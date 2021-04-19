@@ -2,7 +2,7 @@
   "name": "protosprites",
   "version": "0.0.1",
   "description": "sprite-like sheets of SVG icons for the web",
-  "main": "protosprites.js",
+  "main": "index.js",
   "directories": {
     "example": "examples"
   },
