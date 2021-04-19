@@ -2,7 +2,7 @@
 
 [Demo](https://protomaps.github.io/protosprites/examples/display.html)
 
-Protosprites is a sprite-like system for sheets of icons. A sheet is just a single-file HTML document containing SVGs; sheets are loaded and rendered into a single canvas where they can be sampled efficiently via Canvas 2D `drawImage`. This is useful for resolution-independent map symbology inside web browsers.
+Protosprites is a sprite-like system for sheets of icons. A sheet is just a single-file HTML document containing SVGs; sheets are loaded and baked into bitmaps on a canvas, where they can be sampled efficiently via Canvas 2D `drawImage`. This is useful for resolution-independent map symbology inside web browsers.
 
 ## Format
 
@@ -22,6 +22,19 @@ Example of a valid protosprites sheet:
   </body>
 </html>
 ```
+
+SVGs can also be defined inline, avoiding a fetch request, but care should be taken to ensure IDs are unique:
+
+```html
+  <div id="icons">
+    <svg id="foobar" ...>
+  </div>
+  ...
+  <script>
+    let sheet = new Protosprites(document.getElementById('icons').children)
+    ...
+```
+
 ## Library usage
 
 a Protosprites instance asynchronously loads the sheet and renders it to an off-screen Canvas context at device-native resolution. The canvas can then be sampled by icon name via the `get` method:
