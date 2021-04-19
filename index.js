@@ -86,17 +86,17 @@ export default class Protosprites {
         this.canvas = this.createCanvas(src)
     }
 
-    async createCanvas(src) {
-        let tree
+    async createCanvas(icons) {
         let scale = window.devicePixelRatio
-        if (src.endsWith('.html')) {
-            let c = await fetch(src)
+        if (typeof icons === "string" && icons.endsWith('.html')) {
+            let c = await fetch(icons)
             let str = await c.text()
-            tree = (new window.DOMParser()).parseFromString(str, "text/html")
+            let tree = (new window.DOMParser()).parseFromString(str, "text/html")
+            icons = tree.body.children
         }
         this.mapping = {}
         let boxes = []
-        for (let ps of tree.body.children) {
+        for (let ps of icons) {
             var svg64 = btoa(new XMLSerializer().serializeToString(ps))
             var image64 = 'data:image/svg+xml;base64,' + svg64
             let img = await mkimg(image64)
