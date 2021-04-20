@@ -83,10 +83,12 @@ let mkimg = src => {
 
 export default class Protosprites {
     constructor(src) {
-        this.canvas = this.createCanvas(src)
+        this.src = src
+        this.canvas = null
     }
 
-    async createCanvas(icons) {
+    async load() {
+        let icons = this.src
         let scale = window.devicePixelRatio
         if (typeof icons === "string" && icons.endsWith('.html')) {
             let c = await fetch(icons)
@@ -104,23 +106,22 @@ export default class Protosprites {
         }
 
         let packresult = potpack(boxes)
-        let canvas = document.createElement('canvas')
-        canvas.width = packresult.w
-        canvas.height = packresult.h 
-        let ctx = canvas.getContext('2d')
+        this.canvas = document.createElement('canvas')
+        this.canvas.width = packresult.w
+        this.canvas.height = packresult.h 
+        let ctx = this.canvas.getContext('2d')
 
         for (let box of boxes) {
             ctx.drawImage(box.img,box.x,box.y,box.w,box.h)
             this.mapping[box.id] = {x:box.x,y:box.y,w:box.w,h:box.h}
         }
-        return canvas
+        return this
     }
 
-    async get(name) {
-        let canvas = await this.canvas
+    get(name) {
         let result = this.mapping[name]
         if (!result) throw new Error(name + " not found")
-        result.canvas = canvas
+        result.canvas = this.canvas
         return result
     }
 }

@@ -8,7 +8,7 @@ Protosprites is a sprite-like system for sheets of icons. A sheet is just a sing
 
 A protosprites sheet is a collection of SVGs organized in a specific way:
 * It must be an HTML document with all SVGs as children of the `body` element
-* Each SVG element must hae a width and a height in px, interpreted as CSS (not device) pixels
+* Each SVG element must have a width and a height in px, interpreted as CSS (not device) pixels
 * Each SVG must have a unique ID attribute
 
 Example of a valid protosprites sheet:
@@ -43,7 +43,8 @@ a Protosprites instance asynchronously loads the sheet and renders it to an off-
 let sheet = new Protosprites('sheet.html')
 let canvas = document.getElementById("canvas")
 let ctx = canvas.getContext('2d')
-sheet.get('foobar').then(s => {
-    ctx.drawImage(s.canvas,s.x,s.y,s.w,s.h,0,0,s.w,s.h)
+sheet.load().then(() => {
+  let s = sheet.get('foobar')
+  ctx.drawImage(s.canvas,s.x,s.y,s.w,s.h,0,0,s.w,s.h)
 })
 ```
