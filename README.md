@@ -23,15 +23,17 @@ Example of a valid protosprites sheet:
 </html>
 ```
 
-SVGs can also be defined inline, avoiding a fetch request, but care should be taken to ensure IDs are unique:
+SVGs can also be defined via inline strings, avoiding a fetch request.
 
 ```html
+  const ICONS = `
   <div id="icons">
     <svg id="foobar" ...>
   </div>
+  `
   ...
   <script>
-    let sheet = new Protosprites(document.getElementById('icons').children)
+    let sheet = new Protosprites(ICONS)
     ...
 ```
 

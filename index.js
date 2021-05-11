@@ -88,14 +88,14 @@ export default class Protosprites {
     }
 
     async load() {
-        let icons = this.src
+        let src = this.src
         let scale = window.devicePixelRatio
-        if (typeof icons === "string" && icons.endsWith('.html')) {
-            let c = await fetch(icons)
-            let str = await c.text()
-            let tree = (new window.DOMParser()).parseFromString(str, "text/html")
-            icons = tree.body.children
+        if (src.endsWith('.html')) {
+            let c = await fetch(src)
+            src = await c.text()
         }
+        let tree = (new window.DOMParser()).parseFromString(src, "text/html")
+        let icons = tree.body.children
         this.mapping = {}
         let boxes = []
         for (let ps of icons) {
