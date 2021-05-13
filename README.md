@@ -25,18 +25,15 @@ Example of a valid protosprites sheet:
 
 SVGs can also be defined via inline strings, avoiding a fetch request.
 
-```html
-  const ICONS = `
+```js
+const ICONS = `
 <html>
   <body>
     <svg id="foobar" .../>
   </body>
 </html>
-  `
-  ...
-  <script>
-    let sheet = new Protosprites(ICONS)
-    ...
+`
+let sheet = new Protosprites(ICONS)
 ```
 
 ## Library usage
