@@ -26,6 +26,8 @@
             let ctx = target.getContext('2d')
             let i = p.get('hospital')
             ctx.drawImage(i.canvas,i.x,i.y,i.w,i.h,0,0,i.w,i.h)
+            i = p.get('nonexist')
+            ctx.drawImage(i.canvas,i.x,i.y,i.w,i.h,80,0,i.w,i.h)
         })
     </script>
 </html>

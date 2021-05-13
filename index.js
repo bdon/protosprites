@@ -76,10 +76,19 @@ let mkimg = src => {
   return new Promise((resolve, reject) => {
     let img = new Image()
     img.onload = () => resolve(img)
-    img.onerror = reject
+    img.onerror = () => reject("Invalid SVG")
     img.src = src
   })
 }
+
+const MISSING = `
+<svg width="20px" height="20px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <rect width="50" height="50" fill="#cccccc"/>
+    <g transform="translate(5,5)">
+        <path fill="none" stroke="#666666" stroke-width="7" d="m11,12a8.5,8 0 1,1 17,0q0,4-4,6t-4.5,4.5-.4,4v.2m0,3v7"/>
+    </g>
+</svg>
+`
 
 export default class Protosprites {
     constructor(src) {
@@ -97,9 +106,16 @@ export default class Protosprites {
         let tree = (new window.DOMParser()).parseFromString(src, "text/html")
         let icons = tree.body.children
         this.mapping = {}
-        let boxes = []
+
+        let missingImg = await mkimg('data:image/svg+xml;base64,' + btoa(MISSING))
+
+        let boxes = [
+            {w:missingImg.width*scale,h:missingImg.height*scale,img:missingImg}
+        ]
+
+        let serializer = new XMLSerializer()
         for (let ps of icons) {
-            var svg64 = btoa(new XMLSerializer().serializeToString(ps))
+            var svg64 = btoa(serializer.serializeToString(ps))
             var image64 = 'data:image/svg+xml;base64,' + svg64
             let img = await mkimg(image64)
             boxes.push({w:img.width*scale,h:img.height*scale,img:img,id:ps.id})
@@ -113,14 +129,15 @@ export default class Protosprites {
 
         for (let box of boxes) {
             ctx.drawImage(box.img,box.x,box.y,box.w,box.h)
-            this.mapping[box.id] = {x:box.x,y:box.y,w:box.w,h:box.h}
+            if (box.id) this.mapping[box.id] = {x:box.x,y:box.y,w:box.w,h:box.h}
+            else this.missingBox = {x:box.x,y:box.y,w:box.w,h:box.h}
         }
         return this
     }
 
     get(name) {
         let result = this.mapping[name]
-        if (!result) throw new Error(name + " not found")
+        if (!result) result = this.missingBox
         result.canvas = this.canvas
         return result
     }
