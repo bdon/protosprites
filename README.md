@@ -27,9 +27,11 @@ SVGs can also be defined via inline strings, avoiding a fetch request.
 
 ```html
   const ICONS = `
-  <div id="icons">
-    <svg id="foobar" ...>
-  </div>
+<html>
+  <body>
+    <svg id="foobar" .../>
+  </body>
+</html>
   `
   ...
   <script>
