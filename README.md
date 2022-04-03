@@ -1,3 +1,7 @@
+# Deprecated
+
+This package is now part of the main [protomaps.js repo](https://github.com/protomaps/protomaps.js).
+
 ## Overview
 
 [Demo](https://protomaps.github.io/protosprites/examples/display.html)
