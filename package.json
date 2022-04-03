@@ -1,6 +1,6 @@
 {
   "name": "protosprites",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "sprite-like sheets of SVG icons for the web",
   "main": "index.js",
   "directories": {
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/protomaps/protosprites.git"
+    "url": "git+https://github.com/bdon/protosprites.git"
   },
   "keywords": [
     "svg",
@@ -20,7 +20,7 @@
   "author": "Brandon Liu",
   "license": "BSD-3-Clause",
   "bugs": {
-    "url": "https://github.com/protomaps/protosprites/issues"
+    "url": "https://github.com/bdon/protosprites/issues"
   },
-  "homepage": "https://github.com/protomaps/protosprites#readme"
+  "homepage": "https://github.com/bdon/protosprites#readme"
 }
